@@ -1,0 +1,229 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #333;
+}
+body .wrap {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  left: calc(50% - 175px);
+  top: calc(50% - 175px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: spin 7.5s ease-in-out infinite;
+          animation: spin 7.5s ease-in-out infinite;
+  -webkit-transform: rotateY(0deg) rotateX(0deg);
+          transform: rotateY(0deg) rotateX(0deg);
+}
+body .wrap:nth-of-type(1) {
+  -webkit-animation: gradiate 25s ease infinite;
+          animation: gradiate 25s ease infinite;
+  background: -webkit-gradient(linear, left top, right top, from(#03001e), color-stop(#7303c0), color-stop(#ec38bc), to(#fdeff9));
+  background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9);
+  background-size: 800% 800%;
+}
+@-webkit-keyframes gradiate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradiate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+body .wrap:nth-of-type(1):before, body .wrap:nth-of-type(1):after {
+  display: none;
+}
+body .wrap:before, body .wrap:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background: #666;
+  left: -10px;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+body .wrap:after {
+  left: auto;
+  right: 0;
+}
+@-webkit-keyframes spin {
+  25% {
+    -webkit-transform: rotateY(0deg) rotateX(0deg);
+            transform: rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(720deg) rotateX(720deg);
+            transform: rotateY(720deg) rotateX(720deg);
+  }
+}
+@keyframes spin {
+  25% {
+    -webkit-transform: rotateY(0deg) rotateX(0deg);
+            transform: rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(720deg) rotateX(720deg);
+            transform: rotateY(720deg) rotateX(720deg);
+  }
+}
+body .wrap .cube {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+}
+body .wrap .cube .face {
+  position: absolute;
+}
+body .wrap .cube:nth-of-type(5) {
+  width: 40%;
+  height: 40%;
+  top: 30%;
+  left: 30%;
+  -webkit-animation: spin2 1s ease-in-out infinite alternate;
+          animation: spin2 1s ease-in-out infinite alternate;
+  border-radius: 100%;
+  -webkit-transform: translateZ(-95px);
+          transform: translateZ(-95px);
+}
+@-webkit-keyframes spin2 {
+  to {
+    -webkit-transform: translateZ(200px);
+            transform: translateZ(200px);
+  }
+}
+@keyframes spin2 {
+  to {
+    -webkit-transform: translateZ(200px);
+            transform: translateZ(200px);
+  }
+}
+body .wrap .cube:nth-of-type(5) .face {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  top: 0;
+  left: 0;
+}
+body .wrap .cube:nth-of-type(5) .face:last-of-type {
+  -webkit-transform: translateZ(-140px);
+          transform: translateZ(-140px);
+}
+body .wrap .cube:nth-of-type(5) .face:nth-of-type(2) {
+  background: #444;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+body .wrap .cube:nth-of-type(5) .face:nth-of-type(3) {
+  background: #444;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(-90deg) translateZ(140px);
+          transform: rotateY(-90deg) translateZ(140px);
+}
+body .wrap .cube:nth-of-type(5) .face:nth-of-type(4) {
+  background: #222;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+body .wrap .cube:nth-of-type(5) .face:nth-of-type(5) {
+  background: #222;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(-90deg) translateZ(140px);
+          transform: rotateX(-90deg) translateZ(140px);
+}
+body .wrap .cube:nth-of-type(2), body .wrap .cube:nth-of-type(3) {
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+body .wrap .cube:nth-of-type(2) .face:first-of-type, body .wrap .cube:nth-of-type(2) .face:last-of-type, body .wrap .cube:nth-of-type(3) .face:first-of-type, body .wrap .cube:nth-of-type(3) .face:last-of-type {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #555;
+}
+body .wrap .cube:nth-of-type(2) .face:last-of-type, body .wrap .cube:nth-of-type(3) .face:last-of-type {
+  background: #333;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+}
+body .wrap .cube:nth-of-type(3) {
+  left: auto;
+  right: 0;
+}
+body .wrap .cube:first-of-type, body .wrap .cube:last-of-type {
+  width: 100%;
+  height: 30%;
+  left: 0;
+  top: 0;
+}
+body .wrap .cube:first-of-type .face, body .wrap .cube:last-of-type .face {
+  position: absolute;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+body .wrap .cube:first-of-type .face:first-of-type, body .wrap .cube:first-of-type .face:last-of-type, body .wrap .cube:last-of-type .face:first-of-type, body .wrap .cube:last-of-type .face:last-of-type {
+  background: #555;
+  width: 100%;
+  height: 100%;
+}
+body .wrap .cube:first-of-type .face:last-of-type, body .wrap .cube:last-of-type .face:last-of-type {
+  background: #333;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+}
+body .wrap .cube:first-of-type .face:nth-of-type(2), body .wrap .cube:first-of-type .face:nth-of-type(3), body .wrap .cube:last-of-type .face:nth-of-type(2), body .wrap .cube:last-of-type .face:nth-of-type(3) {
+  width: 100%;
+  height: 10px;
+  top: -10px;
+  left: 0;
+  background: #222;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+body .wrap .cube:first-of-type .face:nth-of-type(3), body .wrap .cube:last-of-type .face:nth-of-type(3) {
+  top: auto;
+  bottom: 0;
+}
+body .wrap .cube:last-of-type {
+  top: auto;
+  bottom: 0;
+}
